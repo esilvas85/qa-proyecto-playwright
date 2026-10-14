@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simulador de Próximos Remates — SOLO DEMO</title>
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+<header><div class="flag">ENTORNO SIMULADO PARA PRUEBAS LOCALES — NO ES EL SITIO REAL</div><h1>Próximos Remates (simulador)</h1><p>Encuentra oportunidades de remate</p></header>
+<main>
+<section class="search-area"><h2>Buscar remates</h2>
+<form id="search-form"><label>Palabra clave <input type="search" aria-label="Buscar remates" id="search" placeholder="Buscar productos"></label>
+<label>Casa de remates <select id="house-filter" aria-label="Casa de remates"><option>Seleccionar todas</option><option>America Remates</option><option>Remates Reyco</option><option>Remates del Río</option><option>Remates CDR</option></select></label>
+<button type="submit">Buscar</button></form>
+<div id="result-container" aria-live="polite"></div></section>
+<section><h2>Casas de remates</h2><div class="houses">
+<a class="house" href="reyco.html"><h3>Remates Reyco</h3><p>Ver publicaciones</p></a>
+<a class="house" href="rio.html"><h3>Remates del Río</h3><p>Ver publicaciones</p></a>
+<a class="house" href="cdr.html"><h3>Remates CDR</h3><p>Ver publicaciones</p></a>
+</div></section>
+</main><footer>Simulador QA — solo validación lógica del framework.</footer>
+<script>
+// Este pequeño formulario es una maqueta, NO el portal real.
+// Simulamos dos situaciones para comprobar cómo responde el framework.
+const params=new URLSearchParams(location.search);
+const container=document.querySelector('#result-container');
+document.querySelector('#search-form').addEventListener('submit',ev=>{
+ ev.preventDefault();
+ const txt=document.querySelector('#search').value;
+ const house=document.querySelector('#house-filter').value;
+ // "hundai" no se corrige: es exactamente el dato pedido por la prueba.
+ // "Hyundai" sirve como control positivo separado de la evaluación oficial.
+ const matches=(txt==='Hyundai'||(txt==='hundai'&&params.has('demo_resultados')))&&house==='America Remates';
+ if(matches) {
+   container.innerHTML='<h3>Resultados de la búsqueda</h3><div class="items"><article class="product-card"><h4>Hyundai vehículo 1 (simulado)</h4><p>America Remates</p><a href="detalle-1.html">Ver detalle vehículo 1</a></article><article class="product-card"><h4>Hyundai vehículo 2 (simulado)</h4><p>America Remates</p><a href="detalle-2.html">Ver detalle vehículo 2</a></article></div>';
+ } else {
+   container.innerHTML='<div class="empty-state" role="status">No se encontraron resultados para la búsqueda.</div>';
+ }
+});
+</script>
+</body></html>

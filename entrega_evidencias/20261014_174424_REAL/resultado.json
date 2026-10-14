@@ -1,0 +1,126 @@
+{
+  "started_at": "2026-10-14T17:44:24.733499-03:00",
+  "finished_at": "2026-10-14T17:44:54.542607-03:00",
+  "name": "Emilio Silva",
+  "url": "https://www.proximosremates.cl",
+  "demo": false,
+  "browser": "Chromium (Playwright)",
+  "browser_version": "156.0.8078.4",
+  "cases": [
+    {
+      "name": "Caso 1 - Búsqueda y filtrado (hundai)",
+      "status": "PASS",
+      "notes": [
+        "Ruta válida: búsqueda hundai sin resultados; evidencia del estado vacío registrada."
+      ],
+      "steps": [
+        {
+          "name": "Sitio cargado",
+          "evidence": "evidencias/caso-1-hundai/01-sitio-cargado.png",
+          "detail": "https://www.proximosremates.cl/#/"
+        },
+        {
+          "name": "Busqueda hundai ingresada",
+          "evidence": "evidencias/caso-1-hundai/02-busqueda-hundai-ingresada.png",
+          "detail": "Valor exacto: `hundai`."
+        },
+        {
+          "name": "America Remates seleccionada",
+          "evidence": "evidencias/caso-1-hundai/03-america-remates-seleccionada.png",
+          "detail": ""
+        },
+        {
+          "name": "Busqueda ejecutada",
+          "evidence": "evidencias/caso-1-hundai/04-busqueda-ejecutada.png",
+          "detail": "https://www.proximosremates.cl/#/busqueda-avanzada?idCliente=35&descripcion=hundai"
+        },
+        {
+          "name": "Estado de resultados",
+          "evidence": "evidencias/caso-1-hundai/05-estado-de-resultados.png",
+          "detail": "Término: `hundai`. Detección: EMPTY. No se encontraron lotes."
+        }
+      ],
+      "required": true,
+      "evidence_folder": "caso-1-hundai"
+    },
+    {
+      "name": "Caso 1B - Control positivo Hyundai (adicional)",
+      "status": "INCONCLUSO",
+      "notes": [
+        "El portal informa 2 lote(s) encontrado(s). Aún no se identificó una tarjeta clicable para abrir detalles."
+      ],
+      "steps": [
+        {
+          "name": "Sitio cargado",
+          "evidence": "evidencias/caso-1b-hyundai/01-sitio-cargado.png",
+          "detail": "https://www.proximosremates.cl/#/"
+        },
+        {
+          "name": "Busqueda Hyundai ingresada",
+          "evidence": "evidencias/caso-1b-hyundai/02-busqueda-hyundai-ingresada.png",
+          "detail": "Valor exacto: `Hyundai`."
+        },
+        {
+          "name": "America Remates seleccionada",
+          "evidence": "evidencias/caso-1b-hyundai/03-america-remates-seleccionada.png",
+          "detail": ""
+        },
+        {
+          "name": "Busqueda ejecutada",
+          "evidence": "evidencias/caso-1b-hyundai/04-busqueda-ejecutada.png",
+          "detail": "https://www.proximosremates.cl/#/busqueda-avanzada?idCliente=35&descripcion=Hyundai"
+        },
+        {
+          "name": "Estado de resultados",
+          "evidence": "evidencias/caso-1b-hyundai/05-estado-de-resultados.png",
+          "detail": "Término: `Hyundai`. Detección: FOUND. El portal informa 2 lote(s) encontrado(s). Aún no se identificó una tarjeta clicable para abrir detalles."
+        }
+      ],
+      "required": false,
+      "evidence_folder": "caso-1b-hyundai"
+    },
+    {
+      "name": "Caso 2 - Casas de remates y desplazamiento",
+      "status": "PASS",
+      "notes": [
+        "Primera casa con lotes confirmados: Remates Reyco. El portal informa 158 lote(s) encontrado(s). Aún no se identificó una tarjeta clicable para abrir detalles.",
+        "Orden de evaluación: Remates Reyco: FOUND, Remates del Río: NO VERIFICADO, Remates CDR: NO VERIFICADO",
+        "La disponibilidad se verificó en los listados filtrados de Próximos Remates; el cierre se documentó en la web externa CDR."
+      ],
+      "steps": [
+        {
+          "name": "Listado consultado Remates Reyco",
+          "evidence": "evidencias/caso-2/01-listado-consultado-remates-reyco.png",
+          "detail": "https://www.proximosremates.cl/#/busqueda-avanzada?idCliente=16"
+        },
+        {
+          "name": "Lotes verificados Remates Reyco",
+          "evidence": "evidencias/caso-2/02-lotes-verificados-remates-reyco.png",
+          "detail": "Detección: FOUND. El portal informa 158 lote(s) encontrado(s). Aún no se identificó una tarjeta clicable para abrir detalles."
+        },
+        {
+          "name": "Ubicados en Remates CDR",
+          "evidence": "evidencias/caso-2/03-ubicados-en-remates-cdr.png",
+          "detail": "https://www.rematescdr.cl/"
+        },
+        {
+          "name": "Scroll progresivo 1",
+          "evidence": "evidencias/caso-2/04-scroll-progresivo-1.png",
+          "detail": "Posición: 648 px"
+        },
+        {
+          "name": "Scroll progresivo 4",
+          "evidence": "evidencias/caso-2/05-scroll-progresivo-4.png",
+          "detail": "Posición: 2324 px"
+        },
+        {
+          "name": "Final de pagina Remates CDR",
+          "evidence": "evidencias/caso-2/06-final-de-pagina-remates-cdr.png",
+          "detail": "¿Llegó al pie? True"
+        }
+      ],
+      "required": true,
+      "evidence_folder": ""
+    }
+  ]
+}

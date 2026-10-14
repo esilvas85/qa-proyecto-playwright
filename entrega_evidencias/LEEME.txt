@@ -1,0 +1,5 @@
+Esta entrega fue empaquetada con evidencias de una ejecución REAL del portal.
+Carpeta de ejecución utilizada: 20261014_174424_REAL
+Fecha de empaquetado: 2026-10-14T17:57:52-03:00
+PNG verificados: 16
+La revisión automatizada no sustituye la inspección visual de las capturas.

@@ -1,0 +1,15 @@
+# Entornos virtuales, resultados generados y archivos temporales
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+salidas/
+entregas/
+*.zip
+*.log
+.DS_Store
+.vscode/
+.idea/
